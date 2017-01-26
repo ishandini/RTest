@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  RTest
+
+  Created by Ishan Weerasooriya on 1/25/17.
+  Copyright © 2017 Ishan Weerasooriya. All rights reserved.
+*/
+
+
+// Error messages
+"InvalidAPIKey" = "Invalid API key or invalid access token.";
+"InvalidLogin" = "Credentials do not match with our records.";
+"internet_connection_error" = "Internet connection error.";
+"unknown_error_occured" = "Unknown error occured.";
+
+
+// error alert
+"all_fields_are_required" = "All fields are required.";
+"email_required" = "Email is required.";
+"email_not_valid" = "Email is not valid.";
+"password_required" = "Password is required.";
+
+// messages
+"ok" = "OK";
+"no" = "No";
+"yes" = "Yes";
+
+// HUD messages
+"login" = "Login";
+"loading" = "Loading";
