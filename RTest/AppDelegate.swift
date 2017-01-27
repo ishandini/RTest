@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let user = User.current() {
             // user exsist in local DB, assign this user as appUser
-            appManager?.appUser = user
+            appManager?.setAppUser(user: user)
             
             // show storeList view
             if let storeNav = storyBoard.instantiateViewController(withIdentifier: Constants.ViewControllersIdentifier.StoreNav) as? UINavigationController {

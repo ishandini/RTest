@@ -42,7 +42,7 @@ class User: Object, Mappable {
                 }
             }
             // we can access user from application manager
-            ApplicationManager.shared.appUser = user
+            ApplicationManager.shared.setAppUser(user: user)
         }
     }
     
@@ -56,9 +56,7 @@ class User: Object, Mappable {
     class func logoutUser() {
         try! getRealm().write {
             getRealm().deleteAll()
-        }
-        // remove user reference from application manager
-        ApplicationManager.shared.appUser = nil
+        }       
     }
     
 }

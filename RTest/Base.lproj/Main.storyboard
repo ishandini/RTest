@@ -312,11 +312,101 @@
                         <outlet property="lblEmail" destination="fJT-j1-nau" id="E4T-rZ-G7a"/>
                         <outlet property="lblUserName" destination="nMS-5i-CKc" id="lNF-bv-6ZS"/>
                         <outlet property="tableView" destination="nnR-FF-KLJ" id="th1-Kd-sO1"/>
+                        <segue destination="cYD-nJ-AqE" kind="show" identifier="StoreToDetails" id="ugH-3m-Zyn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTk-bu-zZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1014.375" y="-70"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="NUr-ah-irC">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="cYD-nJ-AqE" customClass="StoreDetailsViewController" customModule="RTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lwX-87-el2"/>
+                        <viewControllerLayoutGuide type="bottom" id="rwr-YS-F7g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WK9-Iu-Ycq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW3-22-nRy">
+                                <rect key="frame" x="0.0" y="64" width="320" height="636"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzc-gc-oxq" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="692.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VaW-xV-L3g">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="Imk-70-HOe"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nam liber te conscient to factor tum poen legum odioque civiuda." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-KJ-GOE">
+                                                <rect key="frame" x="8" y="188" width="304" height="47"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE5-KI-tYk">
+                                                <rect key="frame" x="8" y="245" width="304" height="439.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="lQ6-KJ-GOE" secondAttribute="trailing" constant="8" id="8YZ-NC-jZr"/>
+                                            <constraint firstItem="VaW-xV-L3g" firstAttribute="top" secondItem="tzc-gc-oxq" secondAttribute="top" id="Kmt-8h-Air"/>
+                                            <constraint firstItem="aE5-KI-tYk" firstAttribute="leading" secondItem="tzc-gc-oxq" secondAttribute="leading" constant="8" id="LH7-eg-9Ty"/>
+                                            <constraint firstAttribute="bottom" secondItem="aE5-KI-tYk" secondAttribute="bottom" constant="8" id="OCc-hK-yKB"/>
+                                            <constraint firstItem="lQ6-KJ-GOE" firstAttribute="top" secondItem="VaW-xV-L3g" secondAttribute="bottom" constant="8" id="gnR-rE-oTU"/>
+                                            <constraint firstItem="aE5-KI-tYk" firstAttribute="top" secondItem="lQ6-KJ-GOE" secondAttribute="bottom" constant="10" id="lK8-DA-D8o"/>
+                                            <constraint firstItem="VaW-xV-L3g" firstAttribute="leading" secondItem="tzc-gc-oxq" secondAttribute="leading" id="nd0-hS-pSg"/>
+                                            <constraint firstItem="lQ6-KJ-GOE" firstAttribute="leading" secondItem="tzc-gc-oxq" secondAttribute="leading" constant="8" id="r0B-nE-V94"/>
+                                            <constraint firstAttribute="trailing" secondItem="aE5-KI-tYk" secondAttribute="trailing" constant="8" id="vl5-Gr-01D"/>
+                                            <constraint firstAttribute="trailing" secondItem="VaW-xV-L3g" secondAttribute="trailing" id="xgj-a8-zh2"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="tzc-gc-oxq" secondAttribute="bottom" id="1aG-9I-SIs"/>
+                                    <constraint firstItem="tzc-gc-oxq" firstAttribute="top" secondItem="VW3-22-nRy" secondAttribute="top" id="1au-EU-PWx"/>
+                                    <constraint firstItem="tzc-gc-oxq" firstAttribute="width" secondItem="VW3-22-nRy" secondAttribute="width" id="4gl-vD-miC"/>
+                                    <constraint firstAttribute="trailing" secondItem="tzc-gc-oxq" secondAttribute="trailing" id="fRt-SS-4n4"/>
+                                    <constraint firstItem="tzc-gc-oxq" firstAttribute="height" secondItem="VW3-22-nRy" secondAttribute="height" priority="250" id="gCQ-Mi-YZ0"/>
+                                    <constraint firstItem="tzc-gc-oxq" firstAttribute="leading" secondItem="VW3-22-nRy" secondAttribute="leading" id="jsH-RU-tyu"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VW3-22-nRy" secondAttribute="trailing" id="9Ie-dn-LV4"/>
+                            <constraint firstItem="rwr-YS-F7g" firstAttribute="top" secondItem="VW3-22-nRy" secondAttribute="bottom" id="LZO-47-oJ3"/>
+                            <constraint firstItem="VW3-22-nRy" firstAttribute="leading" secondItem="WK9-Iu-Ycq" secondAttribute="leading" id="MdB-Ja-pEy"/>
+                            <constraint firstItem="VW3-22-nRy" firstAttribute="top" secondItem="lwX-87-el2" secondAttribute="bottom" id="gqE-6E-jGG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="8dM-uU-PCV">
+                        <barButtonItem key="backBarButtonItem" title=" " id="U1S-H2-QLL"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="700"/>
+                    <connections>
+                        <outlet property="imgStore" destination="VaW-xV-L3g" id="jPo-5V-avs"/>
+                        <outlet property="lblTitle" destination="lQ6-KJ-GOE" id="e2s-hv-dgm"/>
+                        <outlet property="tvDescription" destination="aE5-KI-tYk" id="YjR-9i-3Ar"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36j-vM-vJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781.25" y="-70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TGV-eG-QY5">
@@ -344,6 +434,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GDU-c1-ZRG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

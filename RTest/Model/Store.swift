@@ -66,7 +66,7 @@ class Store: Object, Mappable {
         let storeJsonArray = json["data"].arrayValue
         for storeJson in storeJsonArray {
             if let store = Mapper<Store>().map(JSONObject: storeJson.rawValue) {
-                ApplicationManager.shared.stores.append(store)
+                ApplicationManager.shared.addStore(store: store)
             }
         }
         log.debug("StoreCount: \(ApplicationManager.shared.stores.count)")

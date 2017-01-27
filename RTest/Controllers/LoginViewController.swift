@@ -40,7 +40,7 @@ class LoginViewController: BaseViewController {
     // MARK: Supporting Methods
     func logUser() {
         do {
-            let credential = try Validator.shared.validateLogin(email: txtEmail.text!, password: txtPassword.text!)
+            let credential = try Validator.shared.validateLogin(email: txtEmail.text!.trim(), password: txtPassword.text!)
             // send login request
             self.startHUDwithLabel(label: NSLocalizedString("login", comment: ""))
             LoginRequest.shared.logInUser(email: credential.email, password: credential.password, isRemind: btnRemind.isChecked, completion: { (success, message) in

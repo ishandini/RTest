@@ -39,4 +39,22 @@ class ApplicationManager: NSObject {
         log.addDestination(console)
     }
     
+    // MARK: Manage appUser
+    func setAppUser(user: User?) {
+       appUser = user
+    }
+    
+    func removeAppUser() {
+        appUser = nil
+    }
+    
+    // MARK: Manage Store Array
+    func addStore(store: Store) {
+        stores.append(store)
+    }
+    
+    func removeAllStores() {
+        stores.removeAll()
+    }
+    
 }

@@ -16,7 +16,7 @@ struct Constants {
     }
     
     struct SegueIdentifier {
-        static let ExCateToExVC = "ExCateToExVC"
+        static let StoreToDetailsVC = "StoreToDetails"
     }
     
     struct ViewControllersIdentifier {

@@ -38,8 +38,11 @@ class StoreViewController: BaseViewController {
         // delete all user data
         User.logoutUser()
         
+        // remove appUser from ApplicationManager
+        ApplicationManager.shared.removeAppUser()
+        
         // Clear StoreArray in Application manager
-        ApplicationManager.shared.stores.removeAll()
+        ApplicationManager.shared.removeAllStores()
         
         // change root to loginview
         Constants.AppObjects.appDelegate.configInitialView()
@@ -71,18 +74,28 @@ class StoreViewController: BaseViewController {
         }
     }
     
+    // MARK: Prepair for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.SegueIdentifier.StoreToDetailsVC {
+            if let storeDetailVC = segue.destination as? StoreDetailsViewController {
+                storeDetailVC.store = sender as? Store
+            }
+        }
+    }
+
+    
     
 }
 
 
 extension StoreViewController: UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: Tableview Datasource & Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ApplicationManager.shared.stores.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifier.CellIdentifier) as? StoreListCell {
             let store = ApplicationManager.shared.stores[indexPath.row]
             cell.configureCell(store: store)
@@ -91,6 +104,11 @@ extension StoreViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let store = ApplicationManager.shared.stores[indexPath.row]
+        self.performSegue(withIdentifier: Constants.SegueIdentifier.StoreToDetailsVC, sender: store)
     }
     
     

@@ -35,6 +35,8 @@
 		86E6BDDF1E39D0FD00DC183D /* StoreListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6BDDE1E39D0FD00DC183D /* StoreListCell.swift */; };
 		86E6BDE31E39D2C600DC183D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6BDE21E39D2C600DC183D /* Store.swift */; };
 		86E6BDE71E39D6D300DC183D /* StoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6BDE61E39D6D300DC183D /* StoreImage.swift */; };
+		86E6BDE91E39FCE800DC183D /* StoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6BDE81E39FCE800DC183D /* StoreDetailsViewController.swift */; };
+		86E6BDEB1E3AE3F800DC183D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E6BDEA1E3AE3F800DC183D /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		86E6BDDE1E39D0FD00DC183D /* StoreListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreListCell.swift; path = Cell/StoreListCell.swift; sourceTree = "<group>"; };
 		86E6BDE21E39D2C600DC183D /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = Model/Store.swift; sourceTree = "<group>"; };
 		86E6BDE61E39D6D300DC183D /* StoreImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreImage.swift; path = Model/StoreImage.swift; sourceTree = "<group>"; };
+		86E6BDE81E39FCE800DC183D /* StoreDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreDetailsViewController.swift; path = Controllers/StoreDetailsViewController.swift; sourceTree = "<group>"; };
+		86E6BDEA1E3AE3F800DC183D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E481B67333EBCAAACBE37E8F /* Pods-RTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTest/Pods-RTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E6BDEB1E3AE3F800DC183D /* MapKit.framework in Frameworks */,
 				4A549FEC706540557BE528CF /* Pods_RTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +95,7 @@
 		15A064791482C978C6A99C8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86E6BDEA1E3AE3F800DC183D /* MapKit.framework */,
 				46583B231E00A348EDB6F7D8 /* Pods_RTest.framework */,
 			);
 			name = Frameworks;
@@ -166,6 +172,7 @@
 				865CDD9D1E37BAF400CB5E90 /* BaseViewController.swift */,
 				865CDD9F1E37BB2C00CB5E90 /* LoginViewController.swift */,
 				86E6BDD71E39A85300DC183D /* StoreViewController.swift */,
+				86E6BDE81E39FCE800DC183D /* StoreDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +284,11 @@
 						CreatedOnToolsVersion = 8.1;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -383,6 +395,7 @@
 				86E6BDDC1E39CCD000DC183D /* StoreRequest.swift in Sources */,
 				86E6BDD81E39A85300DC183D /* StoreViewController.swift in Sources */,
 				86E6BDE31E39D2C600DC183D /* Store.swift in Sources */,
+				86E6BDE91E39FCE800DC183D /* StoreDetailsViewController.swift in Sources */,
 				865CDDA21E37C3E200CB5E90 /* CheckBox.swift in Sources */,
 				86E6BDD11E39086900DC183D /* NetworkActivityIndicatorManager.swift in Sources */,
 				86E6BDD31E390BCD00DC183D /* LoginRequest.swift in Sources */,
