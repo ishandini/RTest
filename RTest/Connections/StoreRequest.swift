@@ -27,7 +27,7 @@ class StoreRequest: NetworkRequest {
                     let json = JSON(data: data)
                     let statusCode = json["status"].intValue
                     if statusCode == Constants.WebResponceCode.Success {
-                        // success login
+                        // success
                         Store.initializeStoreList(json: json, completion: { 
                             completion(true, "")
                         })

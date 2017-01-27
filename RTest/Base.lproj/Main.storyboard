@@ -31,13 +31,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="386-ht-UFn" userLabel="CenterView">
                                                 <rect key="frame" x="20" y="165.5" width="280" height="200"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="demo@example.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmP-Uo-oTV">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmP-Uo-oTV">
                                                         <rect key="frame" x="20" y="15" width="240" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yoG-eT-PJG">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yoG-eT-PJG">
                                                         <rect key="frame" x="20" y="63" width="240" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -343,7 +343,7 @@
                                                     <constraint firstAttribute="height" constant="180" id="Imk-70-HOe"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nam liber te conscient to factor tum poen legum odioque civiuda." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-KJ-GOE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nam liber te conscient to factor tum poen legum odioque civiuda." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-KJ-GOE">
                                                 <rect key="frame" x="8" y="188" width="304" height="47"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -395,6 +395,11 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="8dM-uU-PCV">
                         <barButtonItem key="backBarButtonItem" title=" " id="U1S-H2-QLL"/>
+                        <barButtonItem key="rightBarButtonItem" image="location" id="Zns-kE-3zf">
+                            <connections>
+                                <segue destination="mvA-YO-wtS" kind="show" identifier="StoreDetailsToMap" id="gaP-xN-rp8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="700"/>
@@ -407,6 +412,43 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36j-vM-vJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781.25" y="-70"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Hva-N7-z71">
+            <objects>
+                <viewController id="mvA-YO-wtS" customClass="MapViewController" customModule="RTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g3C-TL-kN1"/>
+                        <viewControllerLayoutGuide type="bottom" id="lsd-1a-y8f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lmI-UA-dcv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eGT-qC-IwX">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eGT-qC-IwX" secondAttribute="trailing" id="1dk-Mj-VFN"/>
+                            <constraint firstItem="eGT-qC-IwX" firstAttribute="top" secondItem="g3C-TL-kN1" secondAttribute="bottom" id="3MM-GO-1Cs"/>
+                            <constraint firstItem="lsd-1a-y8f" firstAttribute="top" secondItem="eGT-qC-IwX" secondAttribute="bottom" id="KU8-DT-aDM"/>
+                            <constraint firstItem="eGT-qC-IwX" firstAttribute="leading" secondItem="lmI-UA-dcv" secondAttribute="leading" id="h9I-5q-RgB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="3bv-Q5-NS4">
+                        <barButtonItem key="backBarButtonItem" title=" " id="7Ql-vw-Cr6"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="mapView" destination="eGT-qC-IwX" id="ynj-hS-HHQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foN-6l-BwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587.5" y="-208.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TGV-eG-QY5">
@@ -449,6 +491,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
     </scenes>
     <resources>
         <image name="check_box_blank" width="15" height="15"/>
+        <image name="location" width="14" height="19"/>
         <image name="logo_login" width="103" height="125"/>
         <image name="store_image" width="80" height="80"/>
     </resources>

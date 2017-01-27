@@ -57,8 +57,12 @@ class Store: Object, Mappable {
         address <- map["address"]
         postCode <- map["postcode"]
         phoneNumber <- map["phoneNumber"]
-        lat <- map["latitude"]
-        long <- map["longitude"]
+        if let latString = map["latitude"].currentValue as? String, let _lat = Double(latString) {
+            lat = _lat
+        }
+        if let lonString = map["longitude"].currentValue as? String, let _lon = Double(lonString) {
+            long = _lon
+        }
         storeImage <- map["image"]
     }
     

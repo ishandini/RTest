@@ -27,11 +27,6 @@ class StoreDetailsViewController: BaseViewController {
         updateUI()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: Supporting Methods
     func updateUI() {
         lblTitle.text = store?.title
@@ -44,6 +39,16 @@ class StoreDetailsViewController: BaseViewController {
             imgStore.af_setImage(withURL: url, placeholderImage: placeholderImage)
         }
     }
+    
+    // MARK: Prepair for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.SegueIdentifier.StoreDetailsToMapVC {
+            if let mapVC = segue.destination as? MapViewController {
+                mapVC.store = store
+            }
+        }
+    }
+
     
     
     

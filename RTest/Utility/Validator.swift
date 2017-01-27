@@ -50,21 +50,7 @@ class Validator {
         return false
     }
     
-    // Error Code
-    func messageForErrorCode(errorCode: Int) -> String {
-        var message: String = ""
-        switch errorCode {
-        case 401:
-            message = NSLocalizedString("InvalidAPIKey", comment: "")
-        case 402:
-            message = NSLocalizedString("InvalidLogin", comment: "")
-        case 5000:
-            message = NSLocalizedString("internet_connection_error", comment: "")
-        default:
-            message = NSLocalizedString("unknown_error_occured", comment: "")
-        }
-        return message
-    }
+   
     
 }
 

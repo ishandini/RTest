@@ -17,6 +17,7 @@ struct Constants {
     
     struct SegueIdentifier {
         static let StoreToDetailsVC = "StoreToDetails"
+        static let StoreDetailsToMapVC = "StoreDetailsToMap"
     }
     
     struct ViewControllersIdentifier {
